@@ -72,7 +72,9 @@ These variables are let-binded only in `org-printer' commands.")
 (defun org-printer-print-buffer (&optional buffer)
   "Export buffer BUFFER as html and open in browser.
 If BUFFER is omitted, use the current buffer."
-  (interactive)
+  (interactive (list (if current-prefix-arg
+                         (read-buffer "Print buffer: " (buffer-name) t)
+                       (current-buffer))))
   (with-current-buffer (or buffer (current-buffer))
     (org-printer-print-region (point-min) (point-max))))
 
