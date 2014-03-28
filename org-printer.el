@@ -71,6 +71,8 @@ These variables are let-binded only in `org-printer' commands.")
 ;;;###autoload
 (defun org-printer-print-buffer (&optional buffer)
   "Export buffer BUFFER as html and open in browser.
+
+If executed with prefix arg, read a buffer name from minibuffer.
 If BUFFER is omitted, use the current buffer."
   (interactive (list (if current-prefix-arg
                          (read-buffer "Print buffer: " (buffer-name) t)
