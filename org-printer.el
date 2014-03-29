@@ -84,7 +84,6 @@ If BUFFER is omitted, use the current buffer."
 (defun org-printer-print-region (start end)
   "Export current region as html and open in browser."
   (interactive "r")
-  (or start end (error "The mark is not set now, so there is no region"))
   (let* ((org-printer-buffer (current-buffer))
          (org-printer-filename (replace-regexp-in-string
                                 "^\\*\\|\\*$" "!" (buffer-name)))
